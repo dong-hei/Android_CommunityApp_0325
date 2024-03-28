@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "603519134157",
+    "project_id": "sololife-5d441",
+    "storage_bucket": "sololife-5d441.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:603519134157:android:3c15656fd6ce0a1ec17c84",
+        "android_client_info": {
+          "package_name": "com.dk.mylivealonelife"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbq_ZwRFi5IydWiyuwEe2dve8FBLlRIuE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
