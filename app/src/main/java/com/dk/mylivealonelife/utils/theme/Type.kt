@@ -1,4 +1,4 @@
-package com.dk.mylivealonelife.ui.theme
+package com.dk.mylivealonelife.utils.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

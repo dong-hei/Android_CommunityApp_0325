@@ -76,24 +76,36 @@ class BookmarkFragment : Fragment() {
     }
 
     private fun getCategoryData(){
-    val postListener = object : ValueEventListener {
-    override fun onDataChange(dataSnapshot: DataSnapshot) {
-        for (dm in dataSnapshot.children) {
+
+        val postListener = object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (dm in dataSnapshot.children) {
+
             Log.d(TAG , dm.toString())
             val item = dm.getValue(ContentModel::class.java)
-            items.add(item!!)
-            itemKeyList.add(dm.key.toString())
-        }
-        rvAdapter.notifyDataSetChanged()
-    }
+
+            if (bookmarkIdList.contains(dm.key.toString())){
+                    items.add(item!!)
+                    itemKeyList.add(dm.key.toString())
+                }
+
+                }
+                rvAdapter.notifyDataSetChanged()
+            }
 
     override fun onCancelled(databaseError: DatabaseError) {
         // Getting Post failed, log a message
         Log.w("ContentListActivity", "loadPost:onCancelled", databaseError.toException())
-    }
-}
-    FirebaseRefUtil.category1.addValueEventListener(postListener)
-    FirebaseRefUtil.category2.addValueEventListener(postListener)
+            }
+        }
+        FirebaseRefUtil.category1.addValueEventListener(postListener)
+        FirebaseRefUtil.category2.addValueEventListener(postListener)
+        FirebaseRefUtil.category3.addValueEventListener(postListener)
+        FirebaseRefUtil.category4.addValueEventListener(postListener)
+        FirebaseRefUtil.category5.addValueEventListener(postListener)
+        FirebaseRefUtil.category6.addValueEventListener(postListener)
+        FirebaseRefUtil.category7.addValueEventListener(postListener)
+        FirebaseRefUtil.category8.addValueEventListener(postListener)
 
    }
 
@@ -121,7 +133,6 @@ class BookmarkFragment : Fragment() {
         FirebaseRefUtil.bookmarkRef.child(FirebaseAuthUtil.getUid()).addValueEventListener(postListener)
 
     }
-
 
 
 }

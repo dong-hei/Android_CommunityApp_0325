@@ -39,6 +39,37 @@ class TipFragment : Fragment() {
             startActivity(intent)
         }
 
+        binding.category3.setOnClickListener {
+            val intent = Intent(context, ContentListActivity::class.java)
+            intent.putExtra("category","category3")
+            startActivity(intent)
+        }
+        binding.category4.setOnClickListener {
+            val intent = Intent(context, ContentListActivity::class.java)
+            intent.putExtra("category","category4")
+            startActivity(intent)
+        }
+        binding.category5.setOnClickListener {
+            val intent = Intent(context, ContentListActivity::class.java)
+            intent.putExtra("category","category5")
+            startActivity(intent)
+        }
+        binding.category6.setOnClickListener {
+            val intent = Intent(context, ContentListActivity::class.java)
+            intent.putExtra("category","category6")
+            startActivity(intent)
+        }
+        binding.category7.setOnClickListener {
+            val intent = Intent(context, ContentListActivity::class.java)
+            intent.putExtra("category","category7")
+            startActivity(intent)
+        }
+        binding.category8.setOnClickListener {
+            val intent = Intent(context, ContentListActivity::class.java)
+            intent.putExtra("category","category8")
+            startActivity(intent)
+        }
+
         binding.storeTap.setOnClickListener{
             it.findNavController().navigate(R.id.action_tipFragment_to_storeFragment)
         }

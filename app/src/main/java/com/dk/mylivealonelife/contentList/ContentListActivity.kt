@@ -33,17 +33,42 @@ class ContentListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_content_list)
 
         val items = ArrayList<ContentModel>()
+
         val itemKeyList = ArrayList<String>()
 
         rvAdapter = ContentRVAdapter(baseContext, items, itemKeyList, bookmarkList)
 
         val database = Firebase.database
+        myRef = database.getReference("contents3")
+
         val category = intent.getStringExtra("category") // 받은 카테고리 val 값
 
-        if (category == "category1") {
-            myRef = database.getReference("contents")
-        } else if (category == "category2") {
-            myRef = database.getReference("contents2")
+
+        when (category) {
+            "category1" -> {
+                myRef = database.getReference("contents")
+            }
+            "category2" -> {
+                myRef = database.getReference("contents2")
+            }
+            "category3" -> {
+                myRef = database.getReference("contents3")
+            }
+            "category4" -> {
+                myRef = database.getReference("contents4")
+            }
+            "category5" -> {
+                myRef = database.getReference("contents5")
+            }
+            "category6" -> {
+                myRef = database.getReference("contents6")
+            }
+            "category7" -> {
+                myRef = database.getReference("contents7")
+            }
+            "category8" -> {
+                myRef = database.getReference("contents8")
+            }
         }
 
         val postListener = object : ValueEventListener {
@@ -108,5 +133,7 @@ class ContentListActivity : AppCompatActivity() {
         }
         FirebaseRefUtil.bookmarkRef.child(FirebaseAuthUtil.getUid()).addValueEventListener(postListener)
 
+
     }
 }
+

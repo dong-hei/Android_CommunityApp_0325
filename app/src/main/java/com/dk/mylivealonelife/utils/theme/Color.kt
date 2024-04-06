@@ -1,4 +1,4 @@
-package com.dk.mylivealonelife.ui.theme
+package com.dk.mylivealonelife.utils.theme
 
 import androidx.compose.ui.graphics.Color
 

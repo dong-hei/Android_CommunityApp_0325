@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.dk.mylivealonelife.R
@@ -25,21 +26,27 @@ class StoreFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_store, container, false)
 
-        binding.tipTap.setOnClickListener{
+
+        /**
+         * val webView : WebView = view.findViewById(R.id.storeWebView)
+         * 위 방식을 통하지 않더라도 binding.storeWebView 을 통해서 뷰바인딩에 접근할 수 있다.
+         */
+        val webView: WebView = binding.storeWebView
+        webView.loadUrl("https://m.ssg.com/")
+
+        binding.tipTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_storeFragment_to_tipFragment)
         }
-
-        binding.bookmarkTap.setOnClickListener{
+        binding.bookmarkTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_storeFragment_to_bookmarkFragment)
         }
-
-        binding.homeTap.setOnClickListener{
+        binding.homeTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_storeFragment_to_homeFragment)
         }
-
-        binding.talkTap.setOnClickListener{
+        binding.talkTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_storeFragment_to_talkFragment)
         }
 
